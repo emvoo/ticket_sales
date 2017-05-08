@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="editTicketAnchorPane" prefHeight="477.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="610.0" prefWidth="410.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane prefHeight="477.0" prefWidth="400.0">
+               <children>
+                  <Label text="Event Name" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets top="-50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Price" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets top="-50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                     <children>
+                        <Label prefHeight="37.0" prefWidth="67.0" text="Start Date" />
+                        <DatePicker fx:id="eventStartDateEdit">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <Label fx:id="eventStartDateLabelErrorEdit" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="169.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="77.0" text="Expiry Date" />
+                        <DatePicker fx:id="eventExpiryDateEdit">
+                           <VBox.margin>
+                              <Insets left="15.0" right="15.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <Label fx:id="eventExpiryDateLabelErrorEdit" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="169.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <Button mnemonicParsing="false" onAction="#cancelEditingTicket" text="Cancel" GridPane.rowIndex="6" />
+                  <Button mnemonicParsing="false" onAction="#updateTicketAction" text="Save Changes" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label text="Quantity" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets top="-50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <TextField fx:id="eventNameEdit" />
+                        <Label fx:id="eventNameLabelErrorEdit" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="169.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <TextField fx:id="eventQuantityEdit" />
+                        <Label fx:id="eventQuantityLabelErrorEdit" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="169.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
+                  <Label text="ID" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets top="-50.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="ticketID" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="15.0" right="15.0" top="-50.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <TextField fx:id="eventPriceEdit" />
+                        <Label fx:id="eventPriceLabelErrorEdit" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="169.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="15.0" right="15.0" />
+                     </padding>
+                  </VBox>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="0.0" percentHeight="3.0" prefHeight="0.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="10.0" valignment="TOP" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

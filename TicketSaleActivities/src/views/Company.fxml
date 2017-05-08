@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CompanyController">
+  <tabs>
+    <Tab fx:id="agent_tab" text="Agents">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane fx:id="agentSalesAnchorPane" layoutX="27.0" layoutY="239.0" prefHeight="298.0" prefWidth="547.0">
+                     <children>
+                        <VBox layoutX="-6.0" layoutY="38.0" prefHeight="262.0" prefWidth="547.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="62.0" prefWidth="547.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="createTicketSale" mnemonicParsing="false" onAction="#createTicketSaleAction" text="Create a ticket sale" />
+                                          <Label />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="40.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets top="15.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="reverseTcketSale" mnemonicParsing="false" onAction="#reverseTicketSaleAction" text="Reverse Ticket Sale" />
+                                          <Label fx:id="reverseTicketSaleLabelError" textFill="RED">
+                                             <font>
+                                                <Font name="System Bold" size="10.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <HBox.margin>
+                                          <Insets left="40.0" right="40.0" />
+                                       </HBox.margin>
+                                       <padding>
+                                          <Insets top="15.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="ticketsSalesList" prefHeight="217.0" prefWidth="527.0">
+                                <columns>
+                                  <TableColumn fx:id="ticketSalesID" prefWidth="75.0" text="ID" />
+                                  <TableColumn fx:id="ticketSaleEventName" prefWidth="185.0" text="Event Name" />
+                                    <TableColumn fx:id="ticketSaleDate" prefWidth="149.0" text="Sale Date" />
+                                    <TableColumn fx:id="ticketQuantitySold" prefWidth="116.0" text="Quantity Sold" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                  <HBox alignment="CENTER" layoutX="4.0" prefHeight="69.0" prefWidth="593.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="164.0">
+                           <children>
+                              <Button fx:id="add_agent_btn" mnemonicParsing="false" onAction="#addAgentAction" prefHeight="26.0" prefWidth="164.0" text="Add new Agent" />
+                              <Label />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="164.0">
+                           <children>
+                              <Button fx:id="edit_agent_btn" mnemonicParsing="false" onAction="#editAgentAction" prefHeight="26.0" prefWidth="164.0" text="Edit Agent Details" />
+                              <Label fx:id="noAgentSelectedEdit" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="164.0">
+                           <children>
+                              <Button fx:id="delete_agent_btn" mnemonicParsing="false" onAction="#deleteAgentAction" text="Delete Selected Agent" />
+                              <Label fx:id="noAgentSelectedDelete" textFill="RED">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="agentsList" layoutX="36.0" layoutY="69.0" prefHeight="146.0" prefWidth="529.0">
+                    <columns>
+                      <TableColumn fx:id="agentsListId" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="agentsListName" prefWidth="132.0" text="Name" />
+                        <TableColumn fx:id="agentsListLocation" prefWidth="191.0" text="Location" />
+                        <TableColumn fx:id="agentsListPhone" prefWidth="129.0" text="Phone" />
+                    </columns>
+                  </TableView>
+               </children>
+        </AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="ticket_tab" text="Tickets">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="ticketsList" layoutX="25.0" layoutY="143.0" prefHeight="382.0" prefWidth="550.0">
+                    <columns>
+                      <TableColumn fx:id="ticketsListId" prefWidth="41.0" text="Id" />
+                      <TableColumn fx:id="ticketsListName" prefWidth="112.0" text="Event Name" />
+                        <TableColumn fx:id="ticketsListPrice" prefWidth="74.0" text="Price" />
+                        <TableColumn fx:id="ticketsListSaleDate" prefWidth="126.0" text="Start Date" />
+                        <TableColumn fx:id="ticketsListExpiryDate" prefWidth="120.0" text="Expiry Date" />
+                        <TableColumn fx:id="ticketsListQuantity" prefWidth="76.0" text="Quantity" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutX="4.0" layoutY="3.0" maxWidth="1.7976931348623157E308" prefHeight="130.0" prefWidth="592.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="300.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#createTicketAction" prefHeight="26.0" prefWidth="170.0" text="Create New Ticket" />
+                                    <Label />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#modifyTicketAction" prefHeight="26.0" prefWidth="170.0" text="Modify Selected Ticket" />
+                                    <Label fx:id="noTicketSelectedEdit" textFill="RED">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="300.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#deleteSelectedTicketAction" prefHeight="26.0" prefWidth="170.0" text="Delete Selected Ticket" />
+                                    <Label fx:id="noTicketSelectedDelete" textFill="RED">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#displayTicketSales" prefHeight="26.0" prefWidth="170.0" text="Display Ticket Sales" />
+                                    <Label fx:id="noTicketSelectedDisplaySales" textFill="RED">
+                                       <font>
+                                          <Font name="System Bold" size="10.0" />
+                                       </font></Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
